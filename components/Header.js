@@ -1,15 +1,20 @@
+import { CartContext } from "@/lib/CartContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext } from "react";
 
 const Header = () => {
   const router = useRouter();
   const { pathname } = router;
+
+  const {cartProducts} = useContext(CartContext);
+
   const active = "text-primary transition hover:text-secondary font-bold";
   const inactive =
     "text-gray-500 transition hover:text-gray-500/75 font-medium";
   return (
     <>
-      <header className="bg-white border-b border-primary border-opacity-30">
+      <header className="bg-white border-b border-primary border-opacity-30 sticky top-0 z-40">
         <div className="mx-auto flex h-16 max-w-screen-2xl items-center gap-8 px-4 sm:px-6 lg:px-8">
           <Link className="text-primary flex items-center gap-2 " href="/">
             <span className="sr-only">Home</span>
@@ -67,8 +72,8 @@ const Header = () => {
                 </Link>
 
                 <Link
-                  className="hidden rounded-md text-sm font-medium transition sm:block"
-                  href="/"
+                  className="rounded-md text-md flex items-center font-medium transition "
+                  href="/cart"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -84,6 +89,7 @@ const Header = () => {
                       d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                     />
                   </svg>
+                  <span className="ml-2 text-sm text-primary font-bold group-hover:text-text">{cartProducts.length}</span>
                 </Link>
               </div>
 
@@ -103,6 +109,7 @@ const Header = () => {
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
+                
               </button>
             </div>
           </div>

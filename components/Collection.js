@@ -24,7 +24,6 @@ export default function Collection({ product }) {
         <div>
           <div className="max-w-screen-2xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
-                
               <div className="grid p-6 bg-gray-100 rounded place-content-center sm:p-8">
                 <div className="max-w-md mx-auto text-center lg:text-left">
                   <header>

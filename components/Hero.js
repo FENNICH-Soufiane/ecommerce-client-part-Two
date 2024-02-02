@@ -1,7 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { CartContext } from "@/lib/CartContext";
+import { useContext } from "react";
+import toast from 'react-hot-toast';
 
 const Hero = ({ product }) => {
+  const { addProduct } = useContext(CartContext);
+  function addItemToCart() {
+    addProduct(product._id);
+    toast.success('Item Added Successfully to Cart !')
+  }
   if (product) {
     return (
       <>
@@ -27,6 +35,7 @@ const Hero = ({ product }) => {
                   <button
                     type="button"
                     class="rounded-lg border border-primary bg-primary px-5 py-2.5 text-center font-medium text-white shadow-sm transition-all hover:border-secondary hover:bg-secondary focus:ring focus:ring-primary-200 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 text-base"
+                    onClick={addItemToCart}
                   >
                     Add to Cart
                   </button>

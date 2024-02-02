@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { CartContext } from "@/lib/CartContext";
+import { useContext } from "react";
+import toast from 'react-hot-toast';
 
 /* eslint-disable @next/next/no-img-element */
 const Products = ({ products }) => {
@@ -6,6 +9,9 @@ const Products = ({ products }) => {
   const formatPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+
+  const { addProduct } = useContext(CartContext);
+  
 
   return (
     <>
@@ -43,6 +49,7 @@ const Products = ({ products }) => {
                             DH. {formatPrice(product.price)}
                           </p>
                           <button
+                          onClick={() => {addProduct(product._id); toast.success('Item Added Successfully to Cart !')}}
                             type="button"
                             class="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-white px-5 py-2.5 text-center text-sm font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-100 focus:ring focus:ring-gray-100 hover:border-secondary"
                           >
