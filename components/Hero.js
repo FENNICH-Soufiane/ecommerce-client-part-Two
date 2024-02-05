@@ -34,7 +34,7 @@ const Hero = ({ product }) => {
                 <div className="flex gap-4 mt-10 items-center max-sm:justify-center max-sm:mt-6">
                   <button
                     type="button"
-                    class="rounded-lg border border-primary bg-primary px-5 py-2.5 text-center font-medium text-white shadow-sm transition-all hover:border-secondary hover:bg-secondary focus:ring focus:ring-primary-200 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 text-base"
+                    className="rounded-lg border border-primary bg-primary px-5 py-2.5 text-center font-medium text-white shadow-sm transition-all hover:border-secondary hover:bg-secondary focus:ring focus:ring-primary-200 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 text-base"
                     onClick={addItemToCart}
                   >
                     Add to Cart
@@ -42,7 +42,7 @@ const Hero = ({ product }) => {
                   <Link
                     href={"/products"}
                     type="button"
-                    class="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-center  font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-100 focus:ring focus:ring-gray-100 disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-400 text-base"
+                    className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-center  font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-100 focus:ring focus:ring-gray-100 disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-400 text-base"
                   >
                     All Products
                   </Link>

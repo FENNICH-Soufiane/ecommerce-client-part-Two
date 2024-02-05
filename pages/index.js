@@ -10,9 +10,9 @@ export default function Home({featuredproduct, newProducts, collectionProduct}) 
   return (
     <>
     <Hero product={featuredproduct} />
-    <hr class="my-4 h-px border-0 bg-gray-300" />
+    <hr className="my-4 h-px border-0 bg-gray-300" />
     <Products products={newProducts}/>
-    <hr class="my-4 h-px border-0 bg-gray-300" />
+    <hr className="my-4 h-px border-0 bg-gray-300" />
     <Collection product={collectionProduct}/>
     
     </>
