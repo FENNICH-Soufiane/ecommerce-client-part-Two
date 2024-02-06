@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-
+import Link from "next/link";
 
 const Success = () => {
   return (
@@ -38,13 +36,14 @@ const Success = () => {
                       Order Placed
                     </h3>
                     <div className="mt-2 text-sm text-secondary-500">
-                      Your order was placed. we will notify you about the delivery information.
+                      Your order was placed. we will notify you about the
+                      delivery information.
                     </div>
                   </div>
                 </div>
                 <div className="mt-5 flex justify-end gap-3">
                   <Link
-                  href='/products'
+                    href="/products"
                     type="button"
                     className="flex-1 rounded-lg border border-primary bg-primary px-4 py-2 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-primary-700 hover:bg-primary-700 focus:ring focus:ring-primary-200 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300"
                   >
